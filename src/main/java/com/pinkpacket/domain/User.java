@@ -1,28 +1,16 @@
 package com.pinkpacket.domain;
 
 import java.io.Serializable;
-import org.springframework.data.redis.core.RedisHash;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@RedisHash
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable {
   private Long id;
   private String name;
-
-  @Override
-  public String toString() {
-    return "User{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        '}';
-  }
-
-  public User(Long id, String name) {
-    this.id = id;
-    this.name = name;
-  }
-
-  public User() {
-  }
 
   public Long getId() {
     return id;
